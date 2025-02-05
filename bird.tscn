@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dabxipvu00dal"]
+
+[ext_resource type="Texture2D" uid="uid://bx1uxocbpu0vd" path="res://sprites/redbird-downflap.png" id="1_itirm"]
+[ext_resource type="Texture2D" uid="uid://o73g7jtvcs7m" path="res://sprites/redbird-midflap.png" id="2_w07h8"]
+[ext_resource type="Texture2D" uid="uid://fmmt7h6tdrn2" path="res://sprites/redbird-upflap.png" id="3_0uvs8"]
+
+[sub_resource type="GDScript" id="GDScript_p2itp"]
+script/source = "extends CharacterBody2D
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _process(delta):
+	# start animatition of the bird
+	_animated_sprite.play()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5esmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxksd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_itirm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w07h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0uvs8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bird" type="CharacterBody2D"]
+position = Vector2(217, 127)
+script = SubResource("GDScript_p2itp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.56258, 1.32)
+shape = SubResource("CircleShape2D_5esmv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pxksd")
+frame_progress = 0.535679

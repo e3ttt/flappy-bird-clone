@@ -13,3 +13,15 @@ config_version=5
 config/name="Flapply Bird Clone"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=711
+window/size/viewport_height=400
+window/size/mode=3
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_vim/plugin.cfg")
