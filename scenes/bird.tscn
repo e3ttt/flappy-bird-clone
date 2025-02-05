@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dabxipvu00dal"]
 
-[ext_resource type="Script" path="res://sprites/bird.gd" id="1_2nfca"]
+[ext_resource type="Script" path="res://scripts/bird.gd" id="1_2nfca"]
 [ext_resource type="Texture2D" uid="uid://bx1uxocbpu0vd" path="res://sprites/redbird-downflap.png" id="1_itirm"]
 [ext_resource type="Texture2D" uid="uid://o73g7jtvcs7m" path="res://sprites/redbird-midflap.png" id="2_w07h8"]
 [ext_resource type="Texture2D" uid="uid://fmmt7h6tdrn2" path="res://sprites/redbird-upflap.png" id="3_0uvs8"]
@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [node name="Bird" type="CharacterBody2D"]
-position = Vector2(217, 127)
+position = Vector2(206, 16)
 script = ExtResource("1_2nfca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
