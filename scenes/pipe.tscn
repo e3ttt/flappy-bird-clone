@@ -6,12 +6,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov1b1"]
 size = Vector2(48, 318.5)
 
-[node name="Pipe" type="CharacterBody2D"]
+[node name="Pipe" type="Node2D"]
 script = ExtResource("1_73jbk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PipeDown" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeDown"]
 texture = ExtResource("1_67ys4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeDown"]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_ov1b1")
+
+[node name="PipeUp" type="CharacterBody2D" parent="."]
+position = Vector2(0, -420)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeUp"]
+texture = ExtResource("1_67ys4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeUp"]
 position = Vector2(0, 1.25)
 shape = SubResource("RectangleShape2D_ov1b1")
