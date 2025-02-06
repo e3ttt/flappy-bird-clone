@@ -1,6 +1,7 @@
 extends Node
 
 @onready var bird_collided = get_node("Bird").bird_collided.connect(on_bird_collided)
+var is_game_over = false
 
 # Signals
 signal game_over
@@ -8,9 +9,10 @@ signal play_pause(is_game_over: bool)
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ENTER:
-			play_pause.emit(false)
+	if not is_game_over:
+		if event is InputEventKey:
+			if event.pressed and event.keycode == KEY_ENTER:
+				play_pause.emit(false)
 			
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,4 +26,5 @@ func _process(delta: float) -> void:
 	
 func on_bird_collided():
 	play_pause.emit(true)
+	is_game_over = true
 	game_over.emit()
