@@ -1,25 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://vdf23oj7joiv"]
+[gd_scene load_steps=4 format=3 uid="uid://vdf23oj7joiv"]
 
 [ext_resource type="Texture2D" uid="uid://cmml47yy7t3yj" path="res://sprites/base.png" id="1_5nxyf"]
+[ext_resource type="Script" path="res://scripts/moving_floor.gd" id="1_b06lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hed3n"]
 size = Vector2(41.1282, 109)
 
 [node name="floor" type="StaticBody2D" groups=["floor"]]
+script = ExtResource("1_b06lw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(494.075, 377.5)
 scale = Vector2(25.04, 1)
 shape = SubResource("RectangleShape2D_hed3n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(169, 376)
+[node name="FloorSprite" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FloorSprite"]
+position = Vector2(0, 376)
 texture = ExtResource("1_5nxyf")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(505, 376)
+[node name="Sprite2D2" type="Sprite2D" parent="FloorSprite"]
+position = Vector2(336, 376)
 texture = ExtResource("1_5nxyf")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(840, 376)
+[node name="Sprite2D3" type="Sprite2D" parent="FloorSprite"]
+position = Vector2(672, 376)
+texture = ExtResource("1_5nxyf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="FloorSprite"]
+position = Vector2(1008, 376)
 texture = ExtResource("1_5nxyf")

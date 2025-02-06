@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://p5ncq13ebwf2"]
+[gd_scene load_steps=4 format=3 uid="uid://p5ncq13ebwf2"]
 
 [ext_resource type="PackedScene" uid="uid://dabxipvu00dal" path="res://scenes/bird.tscn" id="1_3lprp"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_6bq3x"]
 [ext_resource type="PackedScene" uid="uid://vdf23oj7joiv" path="res://scenes/floor.tscn" id="2_stxey"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_6bq3x")
 
 [node name="Bird" parent="." instance=ExtResource("1_3lprp")]
 
 [node name="floor" parent="." instance=ExtResource("2_stxey")]
+
+[connection signal="game_over" from="." to="Bird" method="_on_main_game_over"]
+[connection signal="game_over" from="." to="floor" method="_on_main_game_over"]
+[connection signal="play_pause" from="." to="Bird" method="_on_main_play_pause"]
+[connection signal="play_pause" from="." to="floor" method="_on_main_play_pause"]
