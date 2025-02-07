@@ -14,6 +14,19 @@ script = ExtResource("1_6bq3x")
 [node name="SpawnPipeTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score:  "
+
+[node name="ScoreValueLabel" type="Label" parent="HUD"]
+offset_left = 57.0
+offset_right = 97.0
+offset_bottom = 23.0
+text = "00000"
+
 [connection signal="game_over" from="." to="Bird" method="_on_main_game_over"]
 [connection signal="game_over" from="." to="floor" method="_on_main_game_over"]
 [connection signal="play_pause" from="." to="Bird" method="_on_main_play_pause"]
