@@ -11,7 +11,11 @@ script = ExtResource("1_6bq3x")
 
 [node name="floor" parent="." instance=ExtResource("2_stxey")]
 
+[node name="SpawnPipeTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="game_over" from="." to="Bird" method="_on_main_game_over"]
 [connection signal="game_over" from="." to="floor" method="_on_main_game_over"]
 [connection signal="play_pause" from="." to="Bird" method="_on_main_play_pause"]
 [connection signal="play_pause" from="." to="floor" method="_on_main_play_pause"]
+[connection signal="timeout" from="SpawnPipeTimer" to="." method="_on_spawn_pipe_timer_timeout"]

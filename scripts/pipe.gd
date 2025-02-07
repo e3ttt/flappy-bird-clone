@@ -3,6 +3,7 @@ extends Node2D
 const SPEED = 100 # TODO: on a bigger project, I'd better to put this information on the main script. This is the same speed as the floor.
 
 @onready var pipe_up = get_node("PipeUp")
+
 var x_pos_up = null
 var y_pos_up = null
 var x_global_pos = null
